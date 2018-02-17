@@ -14,8 +14,8 @@
     <div id="addTask">
         <h2>Add Task</h2>
         <input type="text" id="taskIn" value="" placeholder="Task">
-        <input type="text" id="taskIn" value="" placeholder="Task">
-        <input type="text" id="taskIn" value="" placeholder="Task">
+        <input type="text" id="dateAddedIn" value="" placeholder="Date Added">
+        <input type="text" id="dueByIn" value="" placeholder="Due By">
 
         <select id="completedIn">
             <option value="" disabled selected>Completed? (Y/N)</option>
@@ -24,6 +24,22 @@
         </select>
         <button type="button" id="addButton">Add Task</button>
     </div>
-    
+    <div>
+        <h2>Tasks</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Task ID</th>
+                    <th>Task</th>
+                    <th>Date Added</th>
+                    <th>Due Date</th>
+                    <th>Completed</th>
+                </tr>
+            </thead>
+            <tbody id="outputTasks">
+
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
