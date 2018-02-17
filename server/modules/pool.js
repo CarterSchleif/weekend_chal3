@@ -3,8 +3,8 @@ const Pool = pg.Pool;
 
 
 const config = {
-  database: 'koala_holla',
-  host: 'Localhost',
+  database: 'tasks',
+  host: 'localhost',
   port: 5432,
   max: 10,
   idleTimeoutMillis: 5000 
