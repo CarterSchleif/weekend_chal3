@@ -53,10 +53,10 @@ function addNewTask(){
 
 function putOnDom(tasks){
 for(let i=0; i<tasks.length; i++){
-$('#outputTasks').append(tasks[i].task);
+$('#outputTasks').append( '<br>' + tasks[i].task);
 $('#outputTasks').append(tasks[i].date_added);
 $('#outputTasks').append(tasks[i].due_by);
-$('#outputTasks').append(tasks[i].completed);
+$('#outputTasks').append(tasks[i].completed + '<br>');
 }//end tasksArray for loop
 }//end putOnDom function
 
