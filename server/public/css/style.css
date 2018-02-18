@@ -2,6 +2,11 @@
 color: darkred;
 font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
 }
+.rowTwo {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    color: midnightblue;
+}
+
 body {
     background-color: #ffd700
 }

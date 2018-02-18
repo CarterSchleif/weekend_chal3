@@ -14,7 +14,8 @@ function onReady(){
             url: '/tasks'
         }).done(function(response){
             console.log('success:', response);
-            putOnDom(response);
+            displayTasks(response);
+            //putOnDom(response);
         }).fail(function(response){
             console.log('failure:', response);
         });
@@ -51,14 +52,50 @@ function addNewTask(){
 
 
 
-function putOnDom(tasks){
-for(let i=0; i<tasks.length; i++){
-$('#outputTasks').append( '<br>' + tasks[i].task + ' ');
-$('#outputTasks').append(tasks[i].date_added + ' ');
-$('#outputTasks').append(tasks[i].due_by + ' ');
-$('#outputTasks').append(tasks[i].completed + '<br>');
-}//end tasksArray for loop
-}//end putOnDom function
+
+
+
+
+
+function displayTasks(tasks) {
+    let $tableBody = $('#outputTasks');
+    $tableBody.empty();
+    for(let row=0; row<tasks.length; row++) {
+      let keys = Object.keys(tasks[row]);
+    
+      let $tr = $('<tr>');
+      for(let col=0; col<keys.length + 2; col++) {
+          //$tr.append($('<td>').attr('id', keys[col]).text(koalas[row][keys[col]]), $('<button>').data('id', koalas[row].id).addClass('transfer-btn').text('Ready for Transfer')[0]);
+          if(col === keys.length){
+            $tr.append($('<td>').addClass(keys[col]).append($('<button>').data('id', tasks[row].id).text('Delete').addClass('deleteBtn')));
+          } else if (col === keys.length +1) {
+            $tr.append($('<td>').addClass(keys[col]).append($('<button>').data('id', tasks[row].id).text('Completed Task').addClass('completeBtn')));
+          } else {
+            $tr.append($('<td>').addClass(keys[col]).text(tasks[row][keys[col]])[0]);
+          }
+      } // end col loop
+      
+      
+      $tableBody.append($tr);
+      
+    } // end row loop
+  
+  } // end displayKoalas
+
+
+
+
+
+
+
+// function putOnDom(tasks){
+// for(let i=0; i<tasks.length; i++){
+// $('#outputTasks').append( '<tr>' + '<td>' + tasks[i].task + '</td>');
+// $('#outputTasks').append('<td>' + tasks[i].date_added + '</td>');
+// $('#outputTasks').append('<td>' + tasks[i].due_by + '</td>');
+// $('#outputTasks').append('<td>' + tasks[i].completed + '</td>' + '</tr>');
+// }//end tasksArray for loop
+// }//end putOnDom function
 
 function clearInputs(){
     $('#taskIn').val('');
