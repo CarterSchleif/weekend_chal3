@@ -27,6 +27,11 @@ $('#addButton').on('click', function(){
     clearInputs();
 });//end addButton on click
 
+$('#outputTasks').on('click', '.deleteBtn', function() {
+    const taskId = $(this).data('id');
+    deleteTask(taskId);
+  }) // end delete task
+
 function addNewTask(){
 
     let taskObject = {
@@ -65,7 +70,6 @@ function displayTasks(tasks) {
     
       let $tr = $('<tr>');
       for(let col=0; col<keys.length + 2; col++) {
-          //$tr.append($('<td>').attr('id', keys[col]).text(koalas[row][keys[col]]), $('<button>').data('id', koalas[row].id).addClass('transfer-btn').text('Ready for Transfer')[0]);
           if(col === keys.length){
             $tr.append($('<td>').addClass(keys[col]).append($('<button>').data('id', tasks[row].id).text('Delete').addClass('deleteBtn')));
           } else if (col === keys.length +1) {
@@ -80,7 +84,7 @@ function displayTasks(tasks) {
       
     } // end row loop
   
-  } // end displayKoalas
+  } // end displayTasks
 
 
 
@@ -105,7 +109,19 @@ function clearInputs(){
     $('#outputTasks').empty();
 }//end clearInputs function
 
-
+function deleteTask(id) {
+    $.ajax({
+      type: 'DELETE',
+      url: `/tasks/${id}`,
+    }) // end AJAX
+    .done((response) => {
+      console.log('Task deleted');
+      getTasks();
+    }) // end done
+    .fail((error) => {
+      console.log('error', error);
+    }) // end fail
+  } // end deleteTask
 
 
 

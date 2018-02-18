@@ -41,6 +41,26 @@ app.post('/tasks', (request, response) => {
         })
         })//end GET DB
 
+
+
+
+        app.delete('/tasks/:id', (request, response) => {
+            const sqlText = `DELETE FROM tasks WHERE id=$1`;
+            const id =  request.params.id;
+            pool.query(sqlText, [id]).then((result) => {
+                console.log('Deleted task', id);
+                response.sendStatus(200);
+            }) // end success
+            .catch((error) => {
+                console.log('error in app.delete', error);
+                response.sendStatus(500);
+            })
+          }) // end delete
+
+
+
+
+
 // app.post('/tasks', function(request, response){
 //     let newTask = request.body.newTask;
 //     console.log('it worked!!', newTask);
