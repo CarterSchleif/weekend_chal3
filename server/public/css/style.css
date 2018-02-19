@@ -5,12 +5,43 @@ font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
 .rowTwo {
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
     color: midnightblue;
+    margin: 20px;
+    margin-bottom: 325px;
+    margin-left: 100px
+    
 }
 
 body {
-    background-color: #ffd700
+    background-color: #6ea0cd;
+    border-style: solid;
+  border-color: darkred;
+  border-width: 6px;
+  margin: 15px;
 }
 h1 {
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-    
+    text-shadow: 2px 2px antiquewhite;
+    font-size: 100px
 }
+
+h2{
+    text-shadow: 1px 1px antiquewhite;
+}
+input {
+    background-color: antiquewhite;
+}
+
+td {
+    border-style: ridge;
+    border-width: 2px;
+    border-color: darkred;
+    margin: 5px;
+}
+
+.container {
+text-align: center;
+}
+#tasksHeader {
+    margin-right: 80px;
+}
+

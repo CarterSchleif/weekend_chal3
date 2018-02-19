@@ -30,7 +30,7 @@ $('#addButton').on('click', function(){
 $('#outputTasks').on('click', '.deleteBtn', function() {
     const taskId = $(this).data('id');
     deleteTask(taskId);
-  }) // end delete task
+  }) // end deleteTask onClick
 
 function addNewTask(){
 
@@ -85,10 +85,6 @@ function displayTasks(tasks) {
     } // end row loop
   
   } // end displayTasks
-
-
-
-
 
 
 
