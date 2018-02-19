@@ -32,6 +32,11 @@ $('#outputTasks').on('click', '.deleteBtn', function() {
     deleteTask(taskId);
   }) // end deleteTask onClick
 
+  $('#outputTasks').on('click', '.completeBtn', function() {
+    let id = $(this).data('id');
+    updateComplete(id);
+  }) // end complete button click
+
 function addNewTask(){
 
     let taskObject = {
@@ -120,7 +125,20 @@ function deleteTask(id) {
   } // end deleteTask
 
 
-
+  function updateComplete(id) {
+    $.ajax({
+      type: 'PUT',
+      url: `/tasks/${id}`,
+      data: {id}
+    }) // end AJAX
+    .done(function (response) {
+      console.log('Updated completed task status');
+      getTasks();
+    }) // end done
+    .fail(function (error){
+      console.log(error);
+    }) // end fail
+  } // end updateComplete
 
 
 

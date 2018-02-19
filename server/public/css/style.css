@@ -7,8 +7,7 @@ font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
     color: midnightblue;
     margin: 20px;
     margin-bottom: 325px;
-    margin-left: 100px
-    
+    margin-left: 100px;
 }
 
 body {
@@ -21,7 +20,9 @@ body {
 h1 {
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
     text-shadow: 2px 2px antiquewhite;
-    font-size: 100px
+    font-size: 100px;
+    text-decoration-style: wavy;
+    text-decoration-line: underline;
 }
 
 h2{
@@ -45,3 +46,16 @@ text-align: center;
     margin-right: 80px;
 }
 
+button {
+    background-color: antiquewhite;
+    border-style: solid;
+    border-color: midnightblue;
+    border-width: 1px;
+}
+
+#completedIn {
+    background-color: antiquewhite;
+    border-style: solid;
+    border-color: midnightblue;
+    border-width: 1px;
+}
