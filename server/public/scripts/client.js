@@ -129,7 +129,7 @@ function deleteTask(id) {
     $.ajax({
       type: 'PUT',
       url: `/tasks/${id}`,
-      data: {id}
+      data: id
     }) // end AJAX
     .done(function (response) {
       console.log('Updated completed task status');
